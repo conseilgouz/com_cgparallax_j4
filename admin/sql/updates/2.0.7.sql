@@ -1,0 +1,1 @@
+ALTER TABLE `#__cgparallax_page` MODIFY `created` datetime NOT NULL default '1980-01-01 00:00:00';UPDATE `#__cgparallax_page` SET `created` = '1980-01-01 00:00:00' WHERE `created` = '0000-00-00 00:00:00';ALTER TABLE `#__cgparallax_page` MODIFY `metakey` varchar(1000) NOT NULL DEFAULT '';ALTER TABLE `#__cgparallax_page` DROP COLUMN `metadesc`;

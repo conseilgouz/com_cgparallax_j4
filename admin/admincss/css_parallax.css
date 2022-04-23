@@ -1,0 +1,51 @@
+/**
+ * @component     CG Parallax
+ * Version			: 1.0.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @author ConseilGouz 
+ * Updated on       : January, 2021
+**/
+.form-horizontal .controls {
+	margin-left: 10px;
+}
+#para .control-group:nth-of-type(1){ /* menu ? */
+	float:left;width:50%;
+}
+#para .control-group:nth-of-type(2){ /* stick menu */
+	float:right;width:50%;
+}
+#para .control-group:nth-of-type(3){ /* Menu color */
+	clear:both;float:left;width:50%;
+}
+#para .control-group:nth-of-type(4){ /* Text color */
+	float:right;width:50%;
+}
+#para .control-group:nth-of-type(5){ /* Magic menu */
+	clear:both;float:left;width:50%;
+}
+#para .control-group:nth-of-type(6){ /* magic menu color */
+	float:right;width:50%;
+}
+#para .control-group:nth-of-type(7){ /* note */
+	clear: both;float:left;width:100%;
+}
+#para .control-group:nth-of-type(8){ /* CSS customization  */
+	clear: both;float:left;width:100%;
+}
+#para textarea{
+	width:80% !important;
+}
+
+.alert-success {font-size:120%;
+text-align:center}
+
+.info-labels + div {
+background: none repeat scroll 0 0 #EEEEEE;
+color: #000000;
+font-size: 110%;
+font-style: italic;
+font-weight: normal;
+margin: 15px 0 30px;
+padding: 15px 10px 10px 20px;
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+     <fieldset name="section">
+		<field name="section_title" type="text" label="CG_PX_TITLE_SECTION" description="CG_PX_TITLE_SECTION_DESC"/>
+  		<field name="magic_bg" type="color" default="#8dc54a" label="CG_PX_MAGIC_BG" description="CG_PX_MAGIC_BG_DESC" />
+		<field showon="sf_type!:menu"  name="cg_img_type" type="radio" label="CG_PX_IMG_TYPE" description="CG_PX_IMG_TYPE_DESC"
+			class="btn-group" default="one">
+			<option value="none">CG_PX_NONE</option>
+			<option value="one">CG_PX_ONE_FILE</option>
+			<option value="dir">CG_PX_ONE_DIR</option>
+			<option value="files">CG_PX_FILES</option>
+		</field>
+		<field showon="sf_type!:menu[AND]cg_img_type:one" name="image" type="media" default="" label="CG_PX_IMAGE" description="CG_PX_IMAGE_DESC" preview="tooltip" preview_width="100" preview_height="100"/>
+		<field showon="cg_img_type:dir" name="dir" type="folderlist" default="" label="CG_PX_DIR" description="CG_PX_DIR_DESC" 
+				directory="images" filter="" exclude="" stripext="" />	
+	    <field name="slideslist" showon="cg_img_type:files" 
+		type="subform" multiple ="true" 
+			 label="CG_PX_SLIDE_LIST" description="CG_PX_SLIDE_LIST_DESC" >
+			<form>
+				<field name="file_name" type="media" default="" label="CG_PX_FILE_NAME" description="CG_PX_FILE_NAME_DESC" preview="tooltip" preview_width="100" preview_height="100">
+				</field>
+			</form>
+		</field>
+		<field showon="cg_img_type!:none[AND]sf_type!:menu" name="lighten" type="number" default="0" label="CG_PX_LIGHTEN" description="CG_PX_LIGHTEN_DESC" size="1" min="0" max="9" step="1" filter="integer" />
+		<field showon="cg_img_type!:none[AND]sf_type!:menu" name="cg_anim" type="radio" default="true" label="CG_PX_ANIM" description="CG_PX_ANIM_DESC" class="btn-group btn-group-yesno">
+			<option value="true">JYES</option>
+			<option value="false">JNO</option>
+		</field>
+		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_delay" type="text" default="12000" label="CG_PX_VEGAS_DELAY" description="CG_PX_VEGAS_DELAY_DESC"/>
+		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_trans" type="list"  label="CG_PX_VEGAS_TRANS" default="fade" description="CG_PX_VEGAS_TRANS_DESC">
+					<option	value="fade">CG_PX_FADE</option>
+					<option	value="slideLeft">CG_PX_SLIDE_LEFT</option>
+					<option	value="slideRight">CG_PX_SLIDE_RIGHT</option>
+					<option	value="slideUp">CG_PX_SLIDE_UP</option>
+					<option	value="slideDown">CG_PX_SLIDE_DOWN</option>
+					<option	value="zoomIn">CG_PX_ZOOM_IN</option>
+					<option	value="zoomOut">CG_PX_ZOOM_OUT</option>
+					<option	value="swirlLeft">CG_PX_SWIRL_LEFT</option>
+					<option	value="swirlRight">CG_PX_SWIRL_RIGHT</option>
+					<option	value="burn">CG_PX_BURN</option>
+					<option	value="blur">CG_PX_BLUR</option>
+					<option	value="flash">CG_PX_FLASH</option>
+		</field>	
+		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_duration" type="text" default="1000" label="CG_PX_VEGAS_DURATION" description="CG_PX_VEGAS_DURATION_DESC"/>
+		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_anim" type="list"  label="CG_PX_VEGAS_ANIM" default="random" description="CG_PX_VEGAS_ANIM_DESC">
+					<option	value="random">CG_PX_RANDOM</option>
+					<option	value="kenburns">CG_PX_KENBURNS</option>
+					<option	value="kenburnsUp">CG_PX_KENBURNS_UP</option>
+					<option	value="kenburnsDown">CG_PX_KENBURNS_DOWN</option>
+					<option	value="kenburnsRight">CG_PX_KENBURNS_RIGHT</option>
+					<option	value="kenburnsLeft">CG_PX_KENBURNS_LEFT</option>
+		</field>	
+		<field name="sf_type" type="radio"  label="CG_PX_TYPE" default="content" description="CG_PX_TYPE_DESC">
+			<option	value="content">CG_PX_ARTICLE</option>
+			<option	value="text">CG_PX_TEXT</option>
+			<option	value="menu">CG_PX_ONE_MENU</option>
+		</field>	
+		<field showon="sf_type:content"
+			name="article" type="sql" default="0" label="CG_PX_ARTICLE" description="CG_PX_ARTICLE_DESC"
+			query="SELECT id as article_id, title as value FROM #__content"
+			key_field="article_id"	value_field="value"	/>
+		<field showon="sf_type:content"
+			name="intro_full" type="radio" default="intro" label="CG_PX_INTRO_FULL" description="CG_PX_INTRO_FULL_DESC">
+			<option	value="intro">CG_PX_ARTICLE_INTRO</option>
+			<option	value="full">CG_PX_ARTICLE_FULL</option>
+			<option	value="introfull">CG_PX_ARTICLE_INTROFULL</option>
+		</field>
+		<field showon="sf_type:content[AND]intro_full:intro"
+			name="readmore" type="radio" default="true" label="CG_PX_READMORE" description="CG_PX_READMORE_DESC"  class="btn-group btn-group-yesno">
+				<option value="true">JYES</option>
+				<option value="false">JNO</option>
+		</field>
+		<field showon="sf_type:menu"
+			name="menu" type="menuitem" default="contact" label="CG_PX_SECTION_MENU" description="CG_PX_SECTION_MENU_DESC"
+		/>
+		<field showon="sf_type:text" name="text" type="editor" label="CG_PX_TEXT" description="CG_PX_TEXT_DESC" cols="40" rows="4" filter="safehtml" default="" />
+		<field showon="sf_type!:menu" name="css" type="textarea" label="CG_PX_CSS" description="CG_PX_CSS_DESC" cols="80" rows="4" filter="raw" 
+			default=".cg_bg_img_&lt;no&gt; {} "	/>	
+	</fieldset>
+</form>

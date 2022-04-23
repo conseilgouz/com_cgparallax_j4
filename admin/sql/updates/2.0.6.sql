@@ -1,0 +1,1 @@
+ALTER TABLE `#__cgparallax_page` ADD COLUMN `metakey` text NOT NULL AFTER `language`;ALTER TABLE `#__cgparallax_page` ADD COLUMN `metadesc` text NOT NULL AFTER `language`;

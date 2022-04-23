@@ -1,0 +1,110 @@
+/**
+ * @component     CG Parallax
+ * Version			: 1.0.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @author ConseilGouz 
+ * Updated on       : January, 2021
+**/
+.form-horizontal .controls {
+	margin-left: 10px;
+}
+.form-horizontal .control-label	 {
+	width:8em;
+}
+#sections_set .subform-repeatable-group input[type="text"] {width: 10em}
+#sections_set .subform-repeatable-group input[type="number"] {width: 2em}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(1){ /* titre */
+	float:left;width:50%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(2){ /* magic color */
+	float:right;width:50%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(3){ /* choix image de fond */
+	clear: both;float:left;width:50%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(4){ /* une image */
+	float:right;width:50%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(5){ /* dir */
+	float:right;width:50%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(6){ /* liste image */
+	float:right;width:50%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(7){ /* eclaircir */
+	clear: both;float:left;width:50%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(8){ /* Animation */
+	float:left;width:50%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(9){ /* delai image */
+	clear: both;float:left;width:25%;
+	border: 1px solid #ccc;
+    padding: 5px;	
+
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(10){ /* transition */
+	float:left;width:20%;
+	border: 1px solid #ccc;
+    padding: 5px;	
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(11){ /* delai transition  */
+	float:left;width:25%;
+	border: 1px solid #ccc;
+    padding: 5px;	
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(12){ /* animation */
+	float:left;width:20%;
+	border: 1px solid #ccc;
+    padding: 5px;	
+}
+
+#sections_set .subform-repeatable-group .control-group:nth-of-type(13){ /* type contenu */
+	float:left;width:100%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(14){ /* article */
+	float:left;width:40%;
+	border: 1px solid #ccc;
+    padding: 5px;	
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(15){ /* affichage article */
+	float:left;width:30%;
+	border: 1px solid #ccc;
+    padding: 5px;	
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(16){ /* lire la suite */
+	float:left;width:25%;
+	border: 1px solid #ccc;
+    padding: 5px;	
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(10) label,
+#sections_set .subform-repeatable-group .control-group:nth-of-type(11) label,
+#sections_set .subform-repeatable-group .control-group:nth-of-type(12) label,
+#sections_set .subform-repeatable-group .control-group:nth-of-type(16) .control-label{ 
+	width:15em
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(17){
+	float:left;width:100%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(18){ /* adaptation CSS */
+	float:left;width:100%;
+}
+#sections_set .subform-repeatable-group .control-group:nth-of-type(19){ /* adaptation CSS */
+	float:left;width:100%;
+}
+#sections_set .subform-repeatable-group textarea{
+	width:80% !important;
+}
+.alert-success {font-size:120%;
+text-align:center}
+
+.info-labels + div {
+background: none repeat scroll 0 0 #EEEEEE;
+color: #000000;
+font-size: 110%;
+font-style: italic;
+font-weight: normal;
+margin: 15px 0 30px;
+padding: 15px 10px 10px 20px;
+}
