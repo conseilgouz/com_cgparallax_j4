@@ -1,7 +1,7 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.2
+ * CG Parallax Component  - Joomla 4.x Component 
+ * Version			: 2.1.3
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -58,9 +58,9 @@ class CGHelper {
 				// apply contents plugins
 				$item_tmp = new \stdClass;
 				if ($item->intro_full == "full") {
-					$item_tmp->text = $article->articletext;
+					$item_tmp->text = $article->fulltext;
 				} elseif ($item->intro_full == "introfull") {
-					$item_tmp->text = $article->introtext.$article->articletext;
+					$item_tmp->text = $article->introtext.$article->fulltext;
 				} else 	{ // intro
 					$item_tmp->text = $article->introtext;
 					if ($item->readmore == "true") {

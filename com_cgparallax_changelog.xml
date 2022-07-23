@@ -2,6 +2,17 @@
 	<changelog>
 		<element>com_cgparallax</element>
 		<type>component</type>
+		<version>2.1.3</version>
+        <note>
+            <item>Update : 23/07/2022</item>
+        </note>
+        <fix>
+            <item>Suppress warning Undefined property: stdClass::$articletext in CGHelper</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>com_cgparallax</element>
+		<type>component</type>
 		<version>2.1.2</version>
         <note>
             <item>Update : 04/04/2022</item>
