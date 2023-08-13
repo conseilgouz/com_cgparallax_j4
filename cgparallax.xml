@@ -7,7 +7,7 @@
 	<authorUrl>www.conseilgouz.com</authorUrl>
 	<copyright>Copyright (C) 2023 ConseilGouz.com. All Rights Reserved</copyright>
 	<license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
-	<version>2.1.4</version>
+	<version>2.1.5</version>
 	<namespace path="src">ConseilGouz\Component\CGParallax</namespace>
 	<description>CG_PX_XML_DESCRIPTION</description>
     <install>
@@ -27,6 +27,7 @@
 			<schemapath type="mysql">sql/updates</schemapath>
 		</schemas>
 	</update>
+	<scriptfile>script.php</scriptfile>
     <files folder="site">
 		<folder>src</folder>
 		<folder>tmpl</folder>
@@ -67,11 +68,9 @@
 			<language tag="fr-FR">language/fr-FR/com_cgparallax.sys.ini</language>
 		</languages>
 	</administration>
-	<changelogurl>https://www.conseilgouz.com/updates/com_cgparallax_changelog.xml</changelogurl>
-	
+	<changelogurl>https://raw.githubusercontent.com/conseilgouz/com_cgparallax_j4/master/com_cgparallax_changelog.xml</changelogurl>		
 	<updateservers>
-	<server type="extension" name="COM CG Parallax" priority="1">https://www.conseilgouz.com/updates/com_cgparallax_update.xml</server>
-	<server type="extension" name="COM CG Parallax" priority="2">http://432473037d.url-de-test.ws/updateserver/updates/com_cgparallax_update.xml</server>
+	<server type="extension" name="COM CG Parallax" priority="1">https://raw.githubusercontent.com/conseilgouz/updates_github/master/com_cgparallax_update.xml</server>
 	</updateservers>
 
 </extension>
