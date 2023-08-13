@@ -16,6 +16,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Layout\LayoutHelper;
 
 // HTMLHelper::_('behavior.tooltip');
 HTMLHelper::_('behavior.multiselect');
@@ -27,7 +28,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 $canDo 		= ContentHelper::getActions('com_cgparallax');
 $saveOrder	= $listOrder=='ordering';
 ?>
-<form action="<?php echo JRoute::_('index.php?option=com_cgparallax&view=import'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo Route::_('index.php?option=com_cgparallax&view=import'); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if (!empty( $this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -97,7 +98,7 @@ $saveOrder	= $listOrder=='ordering';
                         $lang->language = $module['language'];
                         $lang->language_image = str_replace('-','_',strtolower($module['language']));
 						$lang->language_title = $module['language'];
-                        echo JLayoutHelper::render('joomla.content.language', $lang); ?>
+                        echo LayoutHelper::render('joomla.content.language', $lang); ?>
                 </td>
 				<td>
 				      <?php echo HTMLHelper::_('jgrid.published', $module['published'], $i, 'import.', false, 'cb'); ?>                  

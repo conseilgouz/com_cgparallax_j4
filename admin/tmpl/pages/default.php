@@ -1,11 +1,10 @@
 <?php
 /**
  * @component     CG Parallax
- * Version			: 1.0.4
+ * Version			: 2.1.4
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
- * Updated on       : January, 2021
 **/
 // no direct access
 defined('_JEXEC') or die;
