@@ -10,6 +10,9 @@
             <item>Add none to animation values</item>
 			<item>dynamic version number from install xml</item>
 		</addition>
+		<fix>
+			<item>Joomla 5.x compatibility</item>
+		</fix>
 		<change>
 			<item>use webassets</item>
 		</change>

@@ -16,7 +16,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Router\Route;
-
+use Joomla\CMS\Layout\LayoutHelper;
 // HTMLHelper::_('behavior.tooltip');
 HTMLHelper::_('behavior.multiselect');
 
@@ -27,7 +27,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 $canDo 		= ContentHelper::getActions('com_cgparallax');
 $saveOrder	= $listOrder=='ordering';
 ?>
-<form action="<?php echo JRoute::_('index.php?option=com_cgparallax&view=pages'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo Route::_('index.php?option=com_cgparallax&view=pages'); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if (!empty( $this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -127,7 +127,7 @@ $saveOrder	= $listOrder=='ordering';
 						echo $this->escape($text); ?>                     
 				</td>
                 <td align="center">
-                    <?php echo JLayoutHelper::render('joomla.content.language', $page); ?>
+                    <?php echo LayoutHelper::render('joomla.content.language', $page); ?>
                 </td>
 				<td class="center">
 					<?php echo HTMLHelper::_('jgrid.published', $page->state, $i, 'pages.', $canChange, 'cb'); ?>
