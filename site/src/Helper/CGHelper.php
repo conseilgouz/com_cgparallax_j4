@@ -30,8 +30,8 @@ class CGHelper {
 		$table->load((int)$id);
 		$lesparams = json_decode($table->page_params,true);
 		$params = new Registry(json_encode($lesparams));
-        $params->sectionsList = $table->sections;
-		$params->metakey = $table->metakey; // J4 : no more keymord
+		$params->set('sectionsList',$table->sections);
+		$params->set('metakey',$table->metakey); // J4 : no more keymord
 		return $params;
     }
 	static function getParallax($params)
@@ -42,7 +42,7 @@ class CGHelper {
 		$result = "<style>".$params->get('css_gen','')."</style>"; // custom module css
 		$result .= "<div class='cg_parallax' id='cg_parallax'>";	
 		$ix = 1;
-		$sectionsList = json_decode($params->sectionsList);
+		$sectionsList = json_decode($params->get('sectionsList'));
 		foreach ($sectionsList as $item) {
 			if ($item->sf_type == 'menu') {
 				continue;

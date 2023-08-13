@@ -42,7 +42,8 @@ if ((bool)Factory::getConfig()->get('debug')) { // debug : addscript to be able 
 }
 $params = CGHelper::getParams($this->page,$this->getModel());
 $parallax =  CGHelper::getParallax($params);
-$doc->setMetadata('keywords', $params->metakey); // J4 : no more keymord
+$doc->setMetadata('keywords', $params->get('metakey')); // J4 : no more keymord
+
 $doc->addScriptOptions('com_cg_parallax', 
 	array('navbar_bg' => $params->get('navbar_bg','lightgrey'),'navbar_color' => $params->get('navbar_color', 'black')
 		  ,'menu' => $params->get('menu','true'),'sticky' => $params->get('sticky','true')
@@ -53,7 +54,7 @@ $doc->addScriptOptions('com_cg_parallax',
 $buttons = "";
 if ($params->get('menu','true') == 'true') {
 // create buttons
-	$sectionsList = json_decode($params->sectionsList);
+	$sectionsList = json_decode($params->get('sectionsList'));
 	$magic = $params->get('magic','false');
 	$buttons = "<div id='cg_navbar'>";
 	if ($magic == "true") {
@@ -88,7 +89,7 @@ if ($this->params->get('show_page_heading')) {
 	echo $this->escape($this->params->get('page_heading')); 
 	echo "</h1>";
 }
-if (strlen(trim($params->get('intro'))) > 0) {
+if (strlen(trim($params->get('intro',''))) > 0) {
 	// apply content plugins on weblinks
 	$item_cls = new stdClass;
 	$item_cls->text = $params->get('intro');
@@ -103,7 +104,7 @@ if (strlen(trim($params->get('intro'))) > 0) {
 		<?php echo $buttons.$parallax;?>
 	</div>
 <?php
-if (strlen(trim($params->get('bottom'))) > 0) {
+if (strlen(trim($params->get('bottom',''))) > 0) {
 	// apply content plugins on weblinks
 	$item_cls = new stdClass;
 	$item_cls->text = $params->get('bottom');
