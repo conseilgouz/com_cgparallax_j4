@@ -28,6 +28,7 @@
 		</field>
 		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_delay" type="text" default="12000" label="CG_PX_VEGAS_DELAY" description="CG_PX_VEGAS_DELAY_DESC"/>
 		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_trans" type="list"  label="CG_PX_VEGAS_TRANS" default="fade" description="CG_PX_VEGAS_TRANS_DESC">
+					<option	value="none">JNONE</option>
 					<option	value="fade">CG_PX_FADE</option>
 					<option	value="slideLeft">CG_PX_SLIDE_LEFT</option>
 					<option	value="slideRight">CG_PX_SLIDE_RIGHT</option>
@@ -42,7 +43,8 @@
 					<option	value="flash">CG_PX_FLASH</option>
 		</field>	
 		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_duration" type="text" default="1000" label="CG_PX_VEGAS_DURATION" description="CG_PX_VEGAS_DURATION_DESC"/>
-		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_anim" type="list"  label="CG_PX_VEGAS_ANIM" default="random" description="CG_PX_VEGAS_ANIM_DESC">
+		<field showon="cg_img_type!:none[AND]sf_type!:menu[AND]cg_anim:true"  name="vegas_anim" type="list"  label="CG_PX_VEGAS_ANIM" default="none" description="CG_PX_VEGAS_ANIM_DESC">
+					<option	value="none">JNONE</option>
 					<option	value="random">CG_PX_RANDOM</option>
 					<option	value="kenburns">CG_PX_KENBURNS</option>
 					<option	value="kenburnsUp">CG_PX_KENBURNS_UP</option>

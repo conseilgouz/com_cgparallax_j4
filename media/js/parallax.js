@@ -1,8 +1,8 @@
 /**
  * @component     CG Parallax
- * Version			: 2.1.2
+ * Version			: 2.1.4
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 var options;
@@ -24,12 +24,13 @@ jQuery(document).ready(function($) {
     	$myslides.forEach(function(item) {
 			$slides.push({src:item.src});
 		});
-		jQuery('.cg_bg_img_' + index).vegas({slides:$slides,cover:true,animation:item.animation,loop: true,delay:item.delay,transitionDuration:item.transitionDuration,transition:item.transition});
-		// jQuery('.cg_bg_img_' + index + " .vegas-wrapper" ).css("background","rgba(256,256,256,0."+item.lighten+")");
-		// vegas 2.5.4 : where is vegas-wrapper ?
+		jQuery('.cg_bg_img_' + index).vegas({slides:$slides,cover:true,animationRegister: [ 'none' ],transitionRegister: [ 'none' ],animation:item.animation,loop: true,delay:item.delay,transitionDuration:item.transitionDuration,transition:item.transition});
 		var lighten = (10 - item.lighten) / 10;
 		var style = document.createElement('style')
 		style.innerText = '.cg_bg_img_' + index + ' .vegas-slide-inner {filter:opacity('+lighten+')}';
+		if (item.animation == "none") {
+			style.innerText += '.cg_bg_img_' + index + ' .vegas-slide,.cg_bg_img_' + index + ' .vegas-slide-inner {will-change: opacity;transform:none}';
+		}
 		document.head.appendChild(style)
 	});
 });

@@ -1,8 +1,8 @@
 /**
  * @package CG Parallax Module
- * @version 2.1.2
+ * @version 2.1.4
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
  **/
 /*
@@ -143,4 +143,62 @@ a.cg_anchor {
 
 .ie6 #cg_magic li, .ie7 #cg_magic li {
 	display: inline;
+}
+/* add vegas animation none */
+.vegas-animation-none,
+.vegas-animation-none2 {
+}
+.vegas-transition-none-in,
+.vegas-transition2-none-in {
+	opacity:1;
+    transition: all 0ms ease 0s !important;
+}
+.vegas-transition-none-out,
+ .vegas-transition-none2-out{
+	 opacity:0;
+    transition: all 0ms ease 0s !important;
+}
+/* fix out */
+.vegas-transition-burn-in.vegas-transition-burn-out {
+    opacity: 0 ;
+    filter: contrast(1000%) saturate(1000%);
+}
+.vegas-transition-fade-in.vegas-transition-fade-out {
+    opacity: 0 ;
+}
+.vegas-transition-flash-in.vegas-transition-flash-out {
+    opacity: 0;
+    filter: brightness(25);
+}
+.vegas-transition-negative-in.vegas-transition-negative-out {
+    opacity: 0;
+    filter: invert(100%);
+}
+.vegas-transition-slideDown-in.vegas-transition-slideDown-out {
+    transform: translateY(100%);
+}
+.vegas-transition-slideLeft-in.vegas-transition-slideLeft-out {
+    transform: translateX(-100%);
+}
+.vegas-transition-slideRight-in.vegas-transition-slideRight-out {
+    transform: translateX(100%);
+}
+.vegas-transition-slideUp-in.vegas-transition-slideUp-out {
+    transform: translateY(-100%);
+}
+.vegas-transition-swirlLeft-in.vegas-transition-swirlLeft-out {
+    transform: scale(2) rotate(-35deg);
+    opacity: 0;
+}
+.vegas-transition-swirlRight-in.vegas-transition-swirlRight-out {
+    transform: scale(2) rotate(35deg);
+    opacity: 0;
+}
+.vegas-transition-zoomIn-in.vegas-transition-zoomIn-out {
+    transform: scale(2);
+    opacity: 0;
+}
+.vegas-transition-zoomOut-in.vegas-transition-zoomOut-out {
+    transform: scale(0);
+    opacity: 0;
 }

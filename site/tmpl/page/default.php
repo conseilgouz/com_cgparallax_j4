@@ -1,9 +1,9 @@
 <?php
 /**
  * @component     CG Parallax
- * Version			: 2.1.2
+ * Version			: 2.1.4
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 // no direct access
@@ -11,13 +11,14 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Uri\Uri;
 use ConseilGouz\Component\CGParallax\Site\Helper\CGHelper;
 use  Joomla\CMS\Filter\OutputFilter as FilterOutput;
+
 PluginHelper::importPlugin('content');
 
 $doc = Factory::getDocument();
 
-// JHtml::_('bootstrap.tooltip');
 HTMLHelper::_('behavior.multiselect');
 HTMLHelper::_('jquery.framework');
 
@@ -25,15 +26,20 @@ $user = Factory::getUser();
 $userId = $user->get('id');
 $app = Factory::getApplication();
 $com_id = $app->input->getInt('Itemid');
-$comfield	= ''.JURI::base(true).'/media/com_cgparallax/';
+$comfield	= 'media/com_cgparallax/';
+/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+$wa = Factory::getDocument()->getWebAssetManager();
 
-$doc->addStyleSheet($comfield.'css/parallax.css');
-// $doc->addStyleSheet($comfield.'assets/css/aos.css'); 
-$doc->addStyleSheet($comfield.'css/vegas.min.css'); 
-// $doc->addScript($comfield .'assets/js/aos.js');
-$doc->addScript($comfield .'js/parallax.js');
-$doc->addScript($comfield .'js/color_anim.js');
-$doc->addScript($comfield .'js/vegas.min.js');
+$wa->registerAndUseStyle('cgparallax',$comfield.'css/parallax.css');
+$wa->registerAndUseStyle('vegas',$comfield.'css/vegas.min.css'); 
+$wa->registerAndUseScript('cgparallax',$comfield .'js/.js');
+$wa->registerAndUseScript('color_anim',$comfield .'js/color_anim.js');
+$wa->registerAndUseScript('vegas',$comfield .'js/vegas.min.js');
+if ((bool)Factory::getConfig()->get('debug')) { // debug : addscript to be able to debug script
+	$doc->addScript(''.URI::base(true).'/media/com_cgparallax/js/parallax.js'); 
+} else {
+	$wa->registerAndUseScript('cgparallax',$comfield .'js/parallax.js');
+}
 $params = CGHelper::getParams($this->page,$this->getModel());
 $parallax =  CGHelper::getParallax($params);
 $doc->setMetadata('keywords', $params->metakey); // J4 : no more keymord

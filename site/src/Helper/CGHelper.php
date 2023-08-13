@@ -1,7 +1,7 @@
 <?php
 /**
  * CG Parallax Component  - Joomla 4.x Component 
- * Version			: 2.1.3
+ * Version			: 2.1.4
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -20,7 +20,7 @@ use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Access\Access;
 use Joomla\CMS\Language\LanguageHelper;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Filesystem\Folder;
+use Joomla\Filesystem\Folder;
 
 class CGHelper {
 
@@ -80,7 +80,6 @@ class CGHelper {
 				Factory::getApplication()->triggerEvent('onContentPrepare', array ('com_content.article', &$item_tmp, &$item_tmp->params, 0));
 				$result .=  $item_tmp->text;
 			}
-			// "background-image: linear-gradient(rgba(255, 255, 255, 0.".$item->lighten."), rgba(250, 250, 250, 0.".$item->lighten."))"
 			$images =array();
 			$animation ="random";
 			$trans= "fade";
@@ -92,6 +91,7 @@ class CGHelper {
 			}
 			if ($item->cg_anim == "false") {
 				$animation = "none";
+                $trans = "none";
 			} else {
 				$trans = $item->vegas_trans;
                 $animation = $item->vegas_anim;
@@ -115,7 +115,7 @@ class CGHelper {
                 } else {
 					$dir = "images/".$dir;
                 }
-                if(!Folder::exists($dir) ) { // le repertoire n'existe pas : on cree
+                if(!is_dir($dir) ) { // le repertoire n'existe pas : on cree
 					Folder::create($dir,755);
                 }
 				$files = Folder::files($dir,null,null ,null , array('desc.txt','index.html','.htaccess'));
