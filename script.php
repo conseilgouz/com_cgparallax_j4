@@ -74,16 +74,6 @@ class com_cgparallaxInstallerScript
 		if (($type=='install') || ($type == 'update')) { // remove obsolete dir/files
 			$this->postinstall_cleanup();
 		}
-        switch ($type) {
-            case 'install': $message = Text::_('ISO_POSTFLIGHT_INSTALLED'); break;
-            case 'uninstall': $message = Text::_('ISO_POSTFLIGHT_UNINSTALLED'); break;
-            case 'update': $message = Text::_('ISO_POSTFLIGHT_UPDATED'); break;
-            case 'discover_install': $message = Text::_('ISO_POSTFLIGHT_DISC_INSTALLED'); break;
-        }
-        $message = '<h3>'.Text::sprintf('ISO_POSTFLIGHT',$parent->getManifest()->name,$parent->getManifest()->version,$message).'</h3>';
-
-		Factory::getApplication()->enqueueMessage($message.Text::_('CG_ISO_XML_DESCRIPTION'), 'notice');
-
 		// Uninstall this installer
 		$this->uninstallInstaller();
 
@@ -113,7 +103,7 @@ class com_cgparallaxInstallerScript
 		// Simple Isotope is now on Github
 		$query = $db->getQuery(true)
 			->delete('#__update_sites')
-			->where($db->quoteName('location') . ' like "%conseilgouz.com/updates/com_parallax%"');
+			->where($db->quoteName('location') . ' like "%conseilgouz.com/updates/com_cgparallax%"');
 		$db->setQuery($query);
 		$db->execute();
 		
