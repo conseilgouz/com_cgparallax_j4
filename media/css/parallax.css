@@ -1,6 +1,6 @@
 /**
  * @package CG Parallax Module
- * @version 2.1.4
+ * @version 2.1.6
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -8,7 +8,7 @@
 /*
    CSP Compliance
 */
-.vegas-slide-inner {background-attachment: fixed;}
+.vegas-slide-inner {background-attachment: fixed !important;}
 
 /*******************************************/
 /* kenburns animation zoom*/
