@@ -9,6 +9,9 @@
 		<fix>
 			<item>add important to background-attachment: fixed in parallax.css </item>
 		</fix>
+		<addition>
+			<item>add toggle inline help button in pages configuration</item>
+		</addition>
 	</changelog>
 	<changelog>
 		<element>com_cgparallax</element>

@@ -1,9 +1,9 @@
 <?php
 /**
  * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.2
+ * Version			: 2.1.6
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGParallax\Administrator\View\Page;
@@ -68,6 +68,8 @@ class HtmlView extends BaseHtmlView {
 		else {
 			ToolBarHelper::cancel('page.cancel', 'JTOOLBAR_CLOSE');
 		}
+		ToolbarHelper::inlinehelp();
+
     }
 
 }

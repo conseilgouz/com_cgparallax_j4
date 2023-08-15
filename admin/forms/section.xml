@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
+	<config>         
+		<inlinehelp button="show"/>     
+	</config>
+
      <fieldset name="section">
 		<field name="section_title" type="text" label="CG_PX_TITLE_SECTION" description="CG_PX_TITLE_SECTION_DESC"/>
   		<field name="magic_bg" type="color" default="#8dc54a" label="CG_PX_MAGIC_BG" description="CG_PX_MAGIC_BG_DESC" />
