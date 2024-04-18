@@ -1,8 +1,8 @@
 /**
  * @component     CG Parallax
- * Version			: 2.1.4
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
+ * Version			: 2.2.0
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 var options;
@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
     // AOS.init();
     	
 	$.each(sections, function(index,item) {
-		$myslides = JSON.parse(item.slides);
+		$myslides = item.slides;
 		$slides = [];
     	$myslides.forEach(function(item) {
 			$slides.push({src:item.src});

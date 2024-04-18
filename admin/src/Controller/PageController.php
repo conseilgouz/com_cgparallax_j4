@@ -1,9 +1,9 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.2
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * CG Parallax Component  - Joomla 4.x/5.x Component 
+ * Version			: 2.2.0
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGParallax\Administrator\Controller;
@@ -20,7 +20,7 @@ class PageController extends FormController
 	protected function allowAdd($data = array())
 	{
 		// Initialise variables.
-		$user		= Factory::getUser();
+		$user		= Factory::getApplication()->getIdentity();
 		$allow		= null;
 		if ($allow === null) {
 			// In the absense of better information, revert to the component permissions.
@@ -33,7 +33,7 @@ class PageController extends FormController
 	protected function allowEdit($data = array(), $key = 'id')
 	{
 		// Initialise variables.
-		$user		= Factory::getUser();
+		$user		= Factory::getApplication()->getIdentity();
 		$recordId	= (int) isset($data[$key]) ? $data[$key] : 0;
 
 		return parent::allowEdit($data, $key);
@@ -86,7 +86,7 @@ class PageController extends FormController
             // Push up to three validation messages out to the user.
             for ($i = 0, $n = count($errors); $i < $n && $i < 3; $i++)
             {
-                if ($errors[$i] instanceof Exception)
+                if ($errors[$i] instanceof \Exception)
                 {
                     $app->enqueueMessage($errors[$i]->getMessage(), 'warning');
                 }

@@ -2,6 +2,20 @@
 	<changelog>
 		<element>com_cgparallax</element>
 		<type>component</type>
+		<version>2.2.0</version>
+        <note>
+            <item>Update : 18/04/2024</item>
+        </note>
+		<fix>
+			<item>Joomla 6.0 deprecation</item>
+		</fix>
+		<change>
+			<item>Compatible images list with CG WebP</item>
+		</change>
+	</changelog>
+	<changelog>
+		<element>com_cgparallax</element>
+		<type>component</type>
 		<version>2.1.6</version>
         <note>
             <item>Update : 15/08/2023</item>
