@@ -2,6 +2,18 @@
 	<changelog>
 		<element>com_cgparallax</element>
 		<type>component</type>
+		<version>2.2.1</version>
+        <note>
+            <item>Update : 24/02/2025</item>
+        </note>
+		<fix>
+			<item>PHP 8.4 compatibility</item>
+            <item>Installation script : missing delete function</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>com_cgparallax</element>
+		<type>component</type>
 		<version>2.2.0</version>
         <note>
             <item>Update : 18/04/2024</item>

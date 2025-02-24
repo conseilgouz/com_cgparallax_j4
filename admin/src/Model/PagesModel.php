@@ -1,9 +1,8 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.2
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * CG Parallax Component  - Joomla 4.x/5.x Component 
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGParallax\Administrator\Model;
@@ -17,7 +16,7 @@ use Joomla\CMS\MVC\Factory\MVCFactoryInterface;
 
 class PagesModel extends ListModel
 {
-	public function __construct($config = array(), MVCFactoryInterface $factory = null)
+	public function __construct($config = array(),? MVCFactoryInterface $factory = null)
 	{
 		if (empty($config['filter_fields'])) {
 			$config['filter_fields'] = array(

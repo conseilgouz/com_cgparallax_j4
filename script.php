@@ -1,9 +1,8 @@
 <?php
 /**
 * CG Parallax Component  - Joomla 4.x/5.x Component 
-* Version			: 2.1.5
 * Package			: CG Parallax
-* copyright 		: Copyright (C) 2023 ConseilGouz. All rights reserved.
+* copyright 		: Copyright (C) 2025 ConseilGouz. All rights reserved.
 * license    		: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 * From              : https://vegas.jaysalvat.com/
 */
@@ -159,5 +158,17 @@ class com_cgparallaxInstallerScript
 		$db->execute();
 		Factory::getCache()->clean('_system');
 	}
-	
+    public function delete($files = [])
+    {
+        foreach ($files as $file) {
+            if (is_dir($file)) {
+                Folder::delete($file);
+            }
+
+            if (is_file($file)) {
+                File::delete($file);
+            }
+        }
+    }
+
 }
