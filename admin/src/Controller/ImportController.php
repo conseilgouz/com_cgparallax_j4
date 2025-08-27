@@ -1,20 +1,20 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.2
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component 
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGParallax\Administrator\Controller;
 \defined('_JEXEC') or die;
 
-use Joomla\CMS\MVC\Controller\FormController;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Session\Session;
 use Joomla\CMS\Language\Text;
-use Joomla\String\StringHelper;
+use Joomla\CMS\MVC\Controller\FormController;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Session\Session;
+use Joomla\Database\DatabaseInterface;
+use Joomla\String\StringHelper;
 
 class ImportController extends FormController
 {
@@ -29,9 +29,9 @@ class ImportController extends FormController
         // Check for request forgeries.
         Session::checkToken() or jexit(Text::_('JINVALID_TOKEN'));
         $app = Factory::getApplication();
-        $input = $app->input;
+        $input = $app->getInput();
 		$pks = $input->post->get('cid', array(), 'array');
-        $db    = Factory::getDbo();
+        $db    = Factory::getContainer()->get(DatabaseInterface::class);
 		foreach ($pks as $id)	{
             $result = $db->setQuery(
                 $db->getQuery(true)
@@ -89,7 +89,7 @@ class ImportController extends FormController
         return false;
         }
 	function check_title($title) {
-        $db    = Factory::getDbo();
+        $db    = Factory::getContainer()->get(DatabaseInterface::class);
         do {
 			$result = $db->setQuery(
                 $db->getQuery(true)

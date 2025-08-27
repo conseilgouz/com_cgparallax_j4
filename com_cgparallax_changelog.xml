@@ -2,6 +2,20 @@
 	<changelog>
 		<element>com_cgparallax</element>
 		<type>component</type>
+		<version>2.3.0</version>
+        <note>
+            <item>Update : 27/08/2025</item>
+        </note>
+		<fix>
+            <item>Joomla 6 : getApplication()->input removed</item>
+            <item>Joomla 6 : getDbo() removed</item>
+            <item>Joomla 6 : list-view not loaded</item>
+            <item>Field Version : use webassets and remove getDbo</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>com_cgparallax</element>
+		<type>component</type>
 		<version>2.2.1</version>
         <note>
             <item>Update : 24/02/2025</item>

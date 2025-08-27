@@ -1,9 +1,8 @@
 <?php
 /**
  * @component     CG Parallax
- * Version			: 2.2.0
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 // no direct access
@@ -19,9 +18,12 @@ use Joomla\CMS\Layout\LayoutHelper;
 
 // HTMLHelper::_('behavior.tooltip');
 HTMLHelper::_('behavior.multiselect');
+// Joomla 6.0 : list-view.js might not be loaded 
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useScript('list-view');
 
 $user		= Factory::getApplication()->getIdentity();
-$userId		= $user->get('id');
+$userId		= $user->id;
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
 $canDo 		= ContentHelper::getActions('com_cgparallax');

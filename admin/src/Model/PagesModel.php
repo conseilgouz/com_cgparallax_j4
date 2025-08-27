@@ -8,11 +8,12 @@
 namespace ConseilGouz\Component\CGParallax\Administrator\Model;
 
 defined('_JEXEC') or die;
-use Joomla\CMS\MVC\Model\ListModel;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Table\Table;
-use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\MVC\Factory\MVCFactoryInterface;
+use Joomla\CMS\MVC\Model\ListModel;
+use Joomla\CMS\Table\Table;
+use Joomla\Database\DatabaseInterface;
+use Joomla\Utilities\ArrayHelper;
 
 class PagesModel extends ListModel
 {
@@ -35,7 +36,7 @@ class PagesModel extends ListModel
 	protected function getListQuery()
 	{
 		// Initialise variables.
-		$db		= $this->getDbo();
+		$db = Factory::getContainer()->get(DatabaseInterface::class);
 		$query	= $db->getQuery(true);
 
 		// Select the required fields from the table.

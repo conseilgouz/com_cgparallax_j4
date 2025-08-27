@@ -1,9 +1,8 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.x/5.x Component
- * Version			: 2.2.0
- * @license httpd://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 *
 */
@@ -22,8 +21,8 @@ class DisplayController extends BaseController
     public function display($cachable = false, $urlparams = false)
     {
 
-        $view = Factory::getApplication()->input->getCmd('view', 'page');
-        Factory::getApplication()->input->set('view', $view);
+        $view = Factory::getApplication()->getInput()->getCmd('view', 'page');
+        Factory::getApplication()->getInput()->set('view', $view);
 
         parent::display($cachable, $urlparams);
 

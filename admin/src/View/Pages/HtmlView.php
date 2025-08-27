@@ -1,9 +1,8 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.2
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component 
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGParallax\Administrator\View\Pages;
@@ -33,9 +32,6 @@ class HtmlView extends BaseHtmlView
 		$this->pages		= $this->get('Items');
 		$this->pagination	= $this->get('Pagination');
 		$this->state		= $this->get('State');
-		$input = Factory::getApplication()->input;
-
-		// CGHelper::addSubmenu($input->getCmd('view', 'pages'));
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {
 			Factory::getApplication()->enqueueMessage(implode("\n", $errors),'error');
@@ -51,7 +47,7 @@ class HtmlView extends BaseHtmlView
 	protected function addToolbar()
 	{
         $canDo = ContentHelper::getActions('com_cgparallax');
-		$user	= Factory::getUser();
+		$user	= Factory::getApplication()->getIdentity();
 		ToolBarHelper::title(Text::_('COM_CGPARALLAX_PAGES'), 'page.png');
 
 		if ($canDo->get('core.create') || (count($user->getAuthorisedCategories('com_cgparallax', 'core.create'))) > 0 ) {

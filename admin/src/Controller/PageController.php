@@ -1,9 +1,8 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.x/5.x Component 
- * Version			: 2.2.0
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component 
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGParallax\Administrator\Controller;
@@ -56,12 +55,12 @@ class PageController extends FormController
         // Initialise variables.
         $app = Factory::getApplication();
         $model= $this->getModel('page'); 
-        $data = $app->input->getVar('jform', array(), 'post', 'array');
+        $data = $app->getInput()->getVar('jform', array(), 'post', 'array');
         $task = $this->getTask();
         $context = 'com_cgparallax.edit.page';
-        $recordId = $app->input->getInt('id');
+        $recordId = $app->getInput()->getInt('id');
         
-        $jinput = Factory::getApplication()->input;
+        $jinput = Factory::getApplication()->getInput();
         $files = $jinput->files->get('jform');
         $file = $files['avatar']; 
           

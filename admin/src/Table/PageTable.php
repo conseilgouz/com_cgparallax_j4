@@ -1,19 +1,18 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.2
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component 
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 *
 */
 namespace ConseilGouz\Component\CGParallax\Administrator\Table;
 
 \defined('_JEXEC') or die;
-use Joomla\CMS\Table\Table;
-use Joomla\CMS\Language\Text;
-use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Table\Table;
+use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Versioning\VersionableTableInterface;
 use Joomla\Database\DatabaseDriver;
 
@@ -53,7 +52,7 @@ class PageTable extends Table implements VersionableTableInterface
 	}
 	function store($key = 0)
 	{
-        $db    = Factory::getDBo();
+        $db    = Factory::getContainer()->get(DatabaseInterface::class);
         $table = $this->_tbl;
         $key   = empty($this->id) ? $key : $this->id;
 
@@ -72,7 +71,7 @@ class PageTable extends Table implements VersionableTableInterface
         $data->id   = $key;
         $data->title = $this->title;
         $data->sections = $this->sections;
-        $input = Factory::getApplication()->input;
+        $input = Factory::getApplication()->getInput();
 		$compl = $input->getVar('jform', array(), 'post', 'array');
         $page_params = [];
         $page_params['menu'] = $compl['menu'];

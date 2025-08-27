@@ -19,10 +19,13 @@ use Joomla\CMS\Layout\LayoutHelper;
 
 // HTMLHelper::_('behavior.tooltip');
 HTMLHelper::_('behavior.multiselect');
+// Joomla 6.0 : list-view.js might not be loaded 
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useScript('list-view');
 
 $user		= Factory::getApplication()->getIdentity();
-;
-$userId		= $user->get('id');
+
+$userId		= $user->id;
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
 $canDo 		= ContentHelper::getActions('com_cgparallax');

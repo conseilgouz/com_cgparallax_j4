@@ -1,9 +1,8 @@
 <?php
 /**
  * @component     CG Parallax
- * Version			: 2.2.0
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 // no direct access
@@ -23,9 +22,9 @@ HTMLHelper::_('behavior.multiselect');
 HTMLHelper::_('jquery.framework');
 
 $user = Factory::getApplication()->getIdentity();
-$userId = $user->get('id');
+$userId = $user->id;
 $app = Factory::getApplication();
-$com_id = $app->input->getInt('Itemid');
+$com_id = $app->getInput()->getInt('Itemid');
 $comfield	= 'media/com_cgparallax/';
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
@@ -35,11 +34,8 @@ $wa->registerAndUseStyle('vegas', $comfield.'css/vegas.min.css');
 $wa->registerAndUseScript('cgparallax', $comfield .'js/.js');
 $wa->registerAndUseScript('color_anim', $comfield .'js/color_anim.js');
 $wa->registerAndUseScript('vegas', $comfield .'js/vegas.min.js');
-if ((bool)Factory::getApplication()->getConfig()->get('debug')) { // debug : addscript to be able to debug script
-    $doc->addScript(''.URI::base(true).'/media/com_cgparallax/js/parallax.js');
-} else {
-    $wa->registerAndUseScript('cgparallax', $comfield .'js/parallax.js');
-}
+$wa->registerAndUseScript('cgparallax', $comfield .'js/parallax.js');
+
 $params = CGHelper::getParams($this->page, $this->getModel());
 $parallax =  CGHelper::getParallax($params);
 $doc->setMetadata('keywords', $params->get('metakey')); // J4 : no more keymord

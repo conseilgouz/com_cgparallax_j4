@@ -1,9 +1,8 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.6
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component 
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGParallax\Administrator\View\Page;
@@ -46,11 +45,9 @@ class HtmlView extends BaseHtmlView {
     protected function addToolbar() {
 		$canDo = ContentHelper::getActions('com_cgparallax');
         $state = $this->get('State');
-        /*$input = Factory::getApplication()->input;
-		$input->setVar('hidemainmenu', true);
-		*/
-		$user		= Factory::getUser();
-		$userId		= $user->get('id');
+
+		$user		= Factory::getApplication()->getIdentity();
+		$userId		= $user->id;
 		if (!isset($this->page->id)) $this->page->id = 0;
 		$isNew		= ($this->page->id == 0);
 

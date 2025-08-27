@@ -166,7 +166,7 @@ class CGHelper
             $model->setState('filter.published', 1);
             // Access filter
             $access = ComponentHelper::getParams('com_content')->get('show_noauth');
-            $authorised = Access::getAuthorisedViewLevels(Factory::getApplication()->getIdentity()->get('id'));
+            $authorised = Access::getAuthorisedViewLevels(Factory::getApplication()->getIdentity()->id);
             $model->setState('filter.access', $access);
 
             $model->setState('filter.language', $app->getLanguageFilter());

@@ -1,9 +1,8 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.2
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component 
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGParallax\Site\View\Page;
@@ -30,7 +29,7 @@ class HtmlView extends BaseHtmlView {
 		$model = $this->getModel();
         $this->pagination = false; // php 8.0
         $this->params = $app->getParams('cgparallax',$model);
-        $this->page= $app->input->getInt('id'); 
+        $this->page= $app->getInput()->getInt('id'); 
         $this->_prepareDocument();
         parent::display($tpl);
     }
