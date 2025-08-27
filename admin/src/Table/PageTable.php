@@ -12,9 +12,10 @@ namespace ConseilGouz\Component\CGParallax\Administrator\Table;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Table\Table;
-use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Versioning\VersionableTableInterface;
 use Joomla\Database\DatabaseDriver;
+use Joomla\Database\DatabaseInterface;
+use Joomla\Utilities\ArrayHelper;
 
 class PageTable extends Table implements VersionableTableInterface
 {
