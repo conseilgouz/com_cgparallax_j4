@@ -73,9 +73,12 @@ class com_cgparallaxInstallerScript
     }
     private function checkLibrary($library)
     {
-        $xml = simplexml_load_file($this->dir.'/lib_conseilgouz/conseilgouz.xml');
+        $file = $this->dir.'/lib_conseilgouz/conseilgouz.xml';
+        if (!is_file($file)) {// library not installed
+            return false;
+        }
+        $xml = simplexml_load_file($file);
         $this->newlib_version = $xml->version;
-
         $db = Factory::getContainer()->get(DatabaseInterface::class);
         $conditions = array(
              $db->qn('type') . ' = ' . $db->q('library'),
