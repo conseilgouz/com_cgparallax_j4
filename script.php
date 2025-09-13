@@ -51,7 +51,7 @@ class com_cgparallaxInstallerScript
         if (! file_exists($this->dir . '/' . $this->installerName . '.xml')) {
             return true;
         }
-        $xml = simplexml_load_file(JPATH_ADMIN . '/components/com_'.$this->extname.'/'.$this->extname.'.xml');
+        $xml = simplexml_load_file(JPATH_ADMINISTRATOR . '/components/com_'.$this->extname.'/'.$this->extname.'.xml');
         $this->previous_version = $xml->version;
 
     }
@@ -68,7 +68,7 @@ class com_cgparallaxInstallerScript
         }
         // delete obsolete version.php file
         $this->delete([
-            JPATH_ADMIN . '/components/com_cgparallax/src/Field/VersionField.php',
+            JPATH_ADMINISTRATOR . '/components/com_cgparallax/src/Field/VersionField.php',
         ]);
         
         // Uninstall this installer
