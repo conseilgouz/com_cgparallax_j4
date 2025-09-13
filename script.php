@@ -64,9 +64,13 @@ class com_cgparallaxInstallerScript
             $ret = $this->installPackage('lib_conseilgouz');
             if ($ret) {
                 Factory::getApplication()->enqueueMessage('ConseilGouz Library ' . $this->newlib_version . ' installed', 'notice');
-
             }
         }
+        // delete obsolete version.php file
+        $this->delete([
+            JPATH_ADMIN . '/components/com_cgparallax/src/Field/VersionField.php',
+        ]);
+        
         // Uninstall this installer
         $this->uninstallInstaller();
         return true;
