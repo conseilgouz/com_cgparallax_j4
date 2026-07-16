@@ -1,1 +1,0 @@
-ALTER TABLE `#__cgparallax_page` DROP COLUMN `metadesc`;

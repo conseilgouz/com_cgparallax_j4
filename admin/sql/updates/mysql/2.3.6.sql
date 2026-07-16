@@ -1,0 +1,1 @@
+ALTER TABLE `#__cgparallax_page` DROP COLUMN `metadesc`  /** CAN FAIL **/;
