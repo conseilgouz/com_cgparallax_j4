@@ -2,6 +2,18 @@
 	<changelog>
 		<element>com_cgparallax</element>
 		<type>component</type>
+		<version>2.3.3</version>
+        <note>
+            <item>Update : 16/07/2026</item>
+        </note>
+        <fix>
+            <item>mysql update : must be in sqm/updates/mysql folder</item>
+            <item>ConseilGouz Library 1.1.0</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>com_cgparallax</element>
+		<type>component</type>
 		<version>2.3.2</version>
         <note>
             <item>Update : 14/09/2025</item>
