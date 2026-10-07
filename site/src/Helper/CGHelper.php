@@ -1,9 +1,8 @@
 <?php
 /**
- * CG Parallax Component  - Joomla 4.x Component
- * Version			: 2.2.0
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2026 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 
@@ -29,6 +28,9 @@ class CGHelper
     {
         $table = $model->getTable();
         $table->load((int)$id);
+        if (!$table) {
+            return false;
+        }
         $lesparams = json_decode($table->page_params, true);
         $params = new Registry(json_encode($lesparams));
         $params->set('sectionsList', $table->sections);

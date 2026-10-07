@@ -1,8 +1,8 @@
 <?php
 /**
- * @component     CG Parallax
+ * CG Parallax Component  - Joomla 4.x/5.x/6.x Component
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2026 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 // no direct access
@@ -37,6 +37,9 @@ $wa->registerAndUseScript('vegas', $comfield .'js/vegas.min.js');
 $wa->registerAndUseScript('cgparallax', $comfield .'js/parallax.js');
 
 $params = CGHelper::getParams($this->page, $this->getModel());
+if (!$params) {
+    return false;
+}
 $parallax =  CGHelper::getParallax($params);
 $doc->setMetadata('keywords', $params->get('metakey')); // J4 : no more keymord
 
